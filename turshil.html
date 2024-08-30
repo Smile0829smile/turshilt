@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var storedItem = localStorage.getItem("storedItem")
+
+            function save(){
+                var Item = document.getElementById("input").value;
+                localStorage.setItem("storedItem", Item);
+                document.getElementById("savedText").innerHTML = Item + " Saved";
+
+            }
+
+            function get(){
+                localStorage.getItem("storedItem");
+                document.getElementById("openedText").innerHTML = storedItem + " Opened";
+            }
+        </script>
+    </head>
+
+    <body onload="get()">
+        <p id="savedText"> </p>
+        <p id="openedText"></p>
+
+        <input type="text" id="input"/>
+        <button onclick="save()"> Save </button>
+    </body>
+</html>
