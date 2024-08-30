@@ -2,18 +2,19 @@
 <html>
     <head>
         <script>
-            var storedItem = localStorage.getItem("storedItem")
+            var storedItem = sessionStorage.getItem("storedItem")
 
             function save(){
                 var Item = document.getElementById("input").value;
-                localStorage.setItem("storedItem", Item);
+                sessionStorage.setItem("storedItem", Item);
                 document.getElementById("savedText").innerHTML = Item + " Saved";
 
             }
 
             function get(){
-                localStorage.getItem("storedItem");
+                sessionStorage.getItem("storedItem");
                 document.getElementById("openedText").innerHTML = storedItem + " Opened";
+                
             }
         </script>
     </head>
